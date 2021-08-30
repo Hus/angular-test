@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ZipService } from './zip.service';
 const routes: Routes = [
   {
     path: '',
@@ -10,7 +11,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes),  HttpClientModule,],
+  exports: [RouterModule],
+  providers: [ ZipService ]
 })
 export class HomePageRoutingModule {}
